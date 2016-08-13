@@ -13,6 +13,8 @@ Plugin 'valloric/youcompleteme'
 
 Plugin 'jiangmiao/auto-pairs'
 
+Plugin 'scrooloose/nerdtree'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
