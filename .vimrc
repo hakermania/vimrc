@@ -15,6 +15,8 @@ Plugin 'jiangmiao/auto-pairs'
 
 Plugin 'scrooloose/nerdtree'
 
+Plugin 'godlygeek/tabular'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -23,6 +25,7 @@ let g:NERDSpaceDelims = 1
 nnoremap <F9> :!%:p<Enter>
 let g:ycm_auto_trigger = 1
 let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
 
 " remove the popup window of ycm, showing information about the function
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
@@ -41,6 +44,9 @@ nnoremap <Leader>v :tabe ~/.vimrc<CR>
 " reload vimrc
 nnoremap <Leader>r :so ~/.vimrc<CR>
 
+" now I can save with space w
+nnoremap <Leader>xh :nohl<CR>
+
 " now I can toggle nerd tree
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
 " tabs to spaces
@@ -48,3 +54,15 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 map <F2> :retab <CR> :wq! <CR>
+
+" tabularize with shortcut
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a; :Tabularize /:\zs<CR>
+vmap <Leader>a; :Tabularize /:\zs<CR>
+
+" show the full path to the current file
+set statusline+=%F
+
+:set ignorecase
+:set smartcase
